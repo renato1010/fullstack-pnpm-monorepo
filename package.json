@@ -1,0 +1,14 @@
+{
+  "name": "@fullstackdemo/root",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node -v",
+    "start:dev": "pnpm --parallel --stream -r run start:dev",
+    "start:server": "pnpm -F @fullstackdemo/server run start:dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

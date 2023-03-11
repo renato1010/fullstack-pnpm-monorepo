@@ -1,0 +1,12 @@
+{
+  "extends": "@tsconfig/node18-strictest/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "outDir": "./build",
+    "resolveJsonModule": true,
+    "paths": {
+      "@/*": ["./*"],
+      "@lib/*": ["./lib/*"],
+    }
+  }
+}
