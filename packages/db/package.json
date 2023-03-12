@@ -1,0 +1,22 @@
+{
+  "name": "@fullstackdemo/db",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "db:seed": "ts-node ./prisma/seed.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "prisma": "^4.11.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.11.0"
+  }
+}
