@@ -10,18 +10,18 @@ export default function Products() {
     return <p>Loading products...</p>;
   } else {
     return (
-      <div style={{ height: "100vh" }}>
-        <h2>Products</h2>
-        <ul>
-          {products.map((p, idx) => (
-            <li key={p.id} style={{ padding: 4 }}>
-              <p style={{ fontWeight: "bolder" }}>{p.name}</p>
-              <p>{p.description}</p>
-              <p>$ {p.price}</p>
-            </li>
+      <article>
+        <h2 className="text-center text-xl font-bold py-6">Products</h2>
+        <div className="px-6 py-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+          {products.map((p) => (
+            <div key={p.id} className="p-2">
+              <p className="font-bold text-lg">{p.name}</p>
+              <p className="text-justify">{p.description}</p>
+              <p className="text-[1.2rem] font-bold text-slate-700 text-right">$ {p.price}</p>
+            </div>
           ))}
-        </ul>
-      </div>
+        </div>
+      </article>
     );
   }
 }
