@@ -1,6 +1,6 @@
 "use client";
-
 import { useGetProducts } from "@api";
+import { ProductCard } from "./ProductCard";
 
 export default function Products() {
   const { products, status } = useGetProducts();
@@ -14,11 +14,7 @@ export default function Products() {
         <h2 className="text-center text-xl font-bold py-6">Products</h2>
         <div className="px-6 py-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           {products.map((p) => (
-            <div key={p.id} className="p-2">
-              <p className="font-bold text-lg">{p.name}</p>
-              <p className="text-justify">{p.description}</p>
-              <p className="text-[1.2rem] font-bold text-slate-700 text-right">$ {p.price}</p>
-            </div>
+            <ProductCard key={p.id} product={p} />
           ))}
         </div>
       </article>
