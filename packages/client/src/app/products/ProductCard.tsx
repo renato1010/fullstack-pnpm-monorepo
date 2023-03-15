@@ -60,6 +60,7 @@ const SeeReviewsToggle = ({ reviews }: SeeReviewsToggleProps) => {
   const reviewDate = (dateData: Date) => {
     return new Intl.DateTimeFormat("en-US").format(new Date(dateData));
   };
+  if (!reviews.length) return null;
   return (
     <div>
       <button
