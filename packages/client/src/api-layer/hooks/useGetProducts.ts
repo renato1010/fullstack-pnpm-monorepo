@@ -1,15 +1,9 @@
 import { useEffect, useState } from "react";
-import { ApiStatus, ProductsWReviews } from "@api";
+import { ApiStatus, ProductsWReviews, hasError } from "@api";
 import { api } from "../fetch.api";
-import { TErrorResponse } from "../fetch-wrapper";
+import { baseUrl } from "../utils";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
-const hasError = (res: { data: ProductsWReviews } | TErrorResponse): res is TErrorResponse => {
-  return "ok" in res && !res.ok;
-};
-
-
+type TResponse = { data: ProductsWReviews; ok: boolean };
 const useGetProducts = () => {
   const [products, setProducts] = useState<ProductsWReviews>([]);
   const [status, setStatus] = useState<ApiStatus>("IDLE");
@@ -17,8 +11,8 @@ const useGetProducts = () => {
   const initFetchProducs = async () => {
     setStatus("PENDING");
     try {
-      const response = await api.get<{ data: ProductsWReviews }>(`${baseUrl}/products`);
-      if (hasError(response)) {
+      const response = await api.get<TResponse>(`${baseUrl}/products`);
+      if (hasError<TResponse>(response)) {
         setStatus("ERROR");
       } else {
         setProducts(response.data);

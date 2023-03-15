@@ -2,6 +2,7 @@
   "compilerOptions": {
     "allowJs": true,
     "esModuleInterop": true,
+    "strict": true,
     "allowSyntheticDefaultImports": true,
     "module": "CommonJS",
     "outDir": "./dist"

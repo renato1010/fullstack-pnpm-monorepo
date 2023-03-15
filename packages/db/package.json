@@ -17,6 +17,8 @@
     "prisma": "^4.11.0"
   },
   "dependencies": {
-    "@prisma/client": "^4.11.0"
+    "@prisma/client": "^4.11.0",
+    "prisma-zod-generator": "^0.8.11",
+    "zod": "^3.21.4"
   }
 }
